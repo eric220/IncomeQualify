@@ -1,0 +1,33 @@
+Clean and explore
+Income train (income_train.csv) is presented in Spanish. 
+1 Rename the columns into their English translation (to_en.py). 
+2 Dataframe is returned to undummy condition (undummy_df.py). 
+3 Several features are dropped due to too many nans, and to much variability (rent_payment, years_behind_school, id). 
+4 The dataframe contains categorical, continous and discrete data. The Target is a discrete variabe between 1 and 4.
+5 Num_tablets has many nan, however they exist where there are no tablets. Thus set nan to zeros. Also, exploration uncovered empty strings not showing as nan.
+6 There is a strong bias to Target level 4.
+7 Some positive and some negative correlation to the target is observed with the quantitative data.
+8
+9
+8 Households with no head (15) are dropped from the dataset.
+9 Poverty level is set for all members of a household to the household heads level.
+10 Missing mean education level is set to the mean education level.
+11 Locate empty education levels and replace with mean education level for given age.
+11a Manually fill the 3 missing education levels.
+12 Fill missing roof_material with mode of roof_material (66).
+13 Fill missing elec_provider with mode of elec_provider (15).
+14 Drop repetitive data, and data that doesnt help model (determined experimentally).
+15 Calculate new dependency (dependents/total occupants).
+16 Encode conditions (roof, floor, wall). Create overall condition, and drop individual conditions.
+17 Get dummy variables.
+
+Model
+1 Verify no null values. 
+2 Drop duplicates.
+3 Test train split (20%).
+4 Fit PCA, 7 components determined experimentally.
+5 Drop pca build features, concatenate new features.
+6 Fit Random Forest Model. Accuracy score is relatively high.
+7 Print confusion matrix visual.
+8 Cross validation shows some overfitting.
+
